@@ -1,2 +1,0 @@
-export default `body{font-family:Arial,sans-serif;margin:0;padding:0;line-height:1.6}header{background:#333;color:#fff;padding:1rem 0;text-align:center}header h1{margin:0}header p{margin:.5rem 0}section{padding:1rem 2rem}h2{border-bottom:2px solid #333;padding-bottom:.5rem}ul{list-style-type:none;padding:0}ul li{background:#f4f4f4;margin:.5rem 0;padding:.5rem}
-`;
