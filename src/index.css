@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---- Print / Export PDF styles ---- */
+@media print {
+  /* Remove browser default print margins */
+  @page {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Show export-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Hide web-only elements */
+  .no-print {
+    display: none !important;
+  }
+}

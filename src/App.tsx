@@ -1,3 +1,4 @@
+import { exportResumeToPDF } from './exportPDF';
 import React from 'react';
 import { 
   Github, 
@@ -35,9 +36,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white" id="resume">
+
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-10 bg-gray-900/80 backdrop-blur-sm">
+      <header className="sticky top-0 z-10 bg-gray-900/80 backdrop-blur-sm no-print">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold">Sarath Chandra</h1>
           <nav>
@@ -56,7 +58,7 @@ function App() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+            <div className="w-48 h-48 rounded-full overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center no-print">
               <span className="text-6xl font-bold">SC</span>
             </div>
             <div>
@@ -67,10 +69,10 @@ function App() {
                 web applications. Expertise in Java/J2EE, Spring Boot, Microservices, RESTful web services, Hibernate, Angular, and Apache Kafka.
               </p>
               <div className="flex space-x-4">
-                <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition-colors">
+                <a href="#contact" className="inline-flex items-center justify-center h-12 bg-blue-600 hover:bg-blue-700 text-white px-6 rounded-md font-medium transition-colors">
                   Contact Me
                 </a>
-                <a href="#experience" className="border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 py-3 rounded-md font-medium transition-colors">
+                <a href="#experience" className="inline-flex items-center justify-center h-12 border border-blue-600 text-blue-400 hover:bg-blue-600/10 px-6 rounded-md font-medium transition-colors">
                   View Experience
                 </a>
               </div>
@@ -79,30 +81,95 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section (Web View) & Technical Skills Summary (PDF View) */}
       <section id="about" className="py-20 px-4 bg-gray-800/50">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8 border-b border-blue-500 pb-2 inline-block">About Me</h2>
-          <p className="text-gray-300 mb-6">
-            I am a Senior Associate Platform Developer with extensive experience in developing enterprise web applications. 
-            My expertise spans across full-stack development, with a strong focus on Java technologies and cloud platforms, 
-            particularly AWS where I hold a Developer Associate certification.
-          </p>
-          <p className="text-gray-300 mb-6">
-            Throughout my career, I've worked on significant projects in banking, e-commerce, and financial services sectors, 
-            delivering robust solutions using modern technologies and best practices.
-          </p>
-          <div className="flex space-x-4 mt-8">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
-              <Github size={20} /> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/sarath77/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
-              <Linkedin size={20} /> LinkedIn
-            </a>
-            <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
-              <FileText size={20} /> Resume
-            </a>
+          
+          {/* Visible only on Web */}
+          <div className="no-print">
+            <h2 className="text-3xl font-bold mb-8 border-b border-blue-500 pb-2 inline-block">About Me</h2>
+            <p className="text-gray-300 mb-6">
+              I am a Senior Associate Platform Developer with extensive experience in developing enterprise web applications. 
+              My expertise spans across full-stack development, with a strong focus on Java technologies and cloud platforms, 
+              particularly AWS where I hold a Developer Associate certification.
+            </p>
+            <p className="text-gray-300 mb-6">
+              Throughout my career, I've worked on significant projects in banking, e-commerce, and financial services sectors, 
+              delivering robust solutions using modern technologies and best practices.
+            </p>
+            <div className="flex space-x-4 mt-8">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
+                <Github size={20} /> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/sarath77/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
+                <Linkedin size={20} /> LinkedIn
+              </a>
+              <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
+                <FileText size={20} /> Resume
+              </a>
+                <button
+                  onClick={() => exportResumeToPDF()}
+                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors border border-blue-400 px-3 py-1 rounded-md"
+                >
+                  <FileText size={20} /> Export PDF
+                </button>
+            </div>
           </div>
+
+          {/* Visible only on Export PDF */}
+          <div className="hidden print-only w-full">
+            <h2 className="text-3xl font-bold mb-8 border-b border-blue-500 pb-2 inline-block">Technical Skills</h2>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <div className="flex items-center gap-2 mb-3 text-blue-400">
+                  <Binary size={20} />
+                  <h3 className="text-lg font-bold">Languages & Core</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><FaJava size={14} className="text-blue-400 shrink-0"/> <span className="">Java (8y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiJavascript size={14} className="text-blue-400 shrink-0"/> <span className="">JS/TS (6y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiPython size={14} className="text-blue-400 shrink-0"/> <span className="">Python (3y)</span></div>
+                </div>
+              </div>
+              <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <div className="flex items-center gap-2 mb-3 text-blue-400">
+                  <Boxes size={20} />
+                  <h3 className="text-lg font-bold">Frameworks & Libraries</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiSpring size={14} className="text-blue-400 shrink-0"/> <span className="">Spring Boot (7y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiReact size={14} className="text-blue-400 shrink-0"/> <span className="">React (4y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAngular size={14} className="text-blue-400 shrink-0"/> <span className="">Angular (3y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiHibernate size={14} className="text-blue-400 shrink-0"/> <span className="">Hibernate (6y)</span></div>
+                </div>
+              </div>
+              <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <div className="flex items-center gap-2 mb-3 text-blue-400">
+                  <Cloud size={20} />
+                  <h3 className="text-lg font-bold">Cloud & DevOps</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAmazonwebservices size={14} className="text-blue-400 shrink-0"/> <span className="">AWS (5y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiDocker size={14} className="text-blue-400 shrink-0"/> <span className="">Docker (4y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiJenkins size={14} className="text-blue-400 shrink-0"/> <span className="">Jenkins (5y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiKubernetes size={14} className="text-blue-400 shrink-0"/> <span className="">Kubernetes (3y)</span></div>
+                </div>
+              </div>
+              <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <div className="flex items-center gap-2 mb-3 text-blue-400">
+                  <Database size={20} />
+                  <h3 className="text-lg font-bold">Databases & Tools</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiPostgresql size={14} className="text-blue-400 shrink-0"/> <span className="">PostgreSQL (6y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAmazondynamodb size={14} className="text-blue-400 shrink-0"/> <span className="">DynamoDB (4y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiElasticsearch size={14} className="text-blue-400 shrink-0"/> <span className="">Elasticsearch (4y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiApachekafka size={14} className="text-blue-400 shrink-0"/> <span className="">Kafka (5y)</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -121,7 +188,7 @@ function App() {
               </div>
               <p className="text-gray-400 mb-4">September 2021 - Present</p>
               <p className="text-gray-300 mb-4">Project: Goldman Sachs Marcus Highline - Quantum Core</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Designed and developed RESTful APIs for efficient transaction data transfer with robust validations ensuring data integrity</li>
                 <li>Created and maintained React-based user interfaces for the Quantum ETL platform</li>
                 <li>Engineered notification service for timely delivery of compliance reports</li>
@@ -142,7 +209,7 @@ function App() {
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-300 mb-2">Project: MasterCard Payment Gateway Services</p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
                     <li>Developed end-to-end functionality for saved searches feature</li>
                     <li>Implemented order reconciliation functionality</li>
                     <li>Enhanced password validation system</li>
@@ -151,7 +218,7 @@ function App() {
                 </div>
                 <div>
                   <p className="text-gray-300 mb-2">Project: Culture of Togetherness</p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
                     <li>Designed and developed full-stack application from concept to deployment</li>
                     <li>Integrated EPAM SSO with Spring Security</li>
                     <li>Implemented Kafka messaging and Jenkins CI/CD pipeline</li>
@@ -170,7 +237,7 @@ function App() {
               </div>
               <p className="text-gray-400 mb-4">February 2019 - July 2019</p>
               <p className="text-gray-300 mb-2">Project: Agent E-Commerce</p>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <ul className="list-disc pl-5 text-gray-300 space-y-2">
                 <li>Resolved bugs in the Agent E-commerce portal</li>
                 <li>Worked with asynchronous frameworks for high performance and speed</li>
                 <li>Utilized Play Framework and Akka Framework for microservices development</li>
@@ -189,7 +256,7 @@ function App() {
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-300 mb-2">Project: Bose Corporation (BOPIS)</p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
                     <li>Designed and developed microservices for new customer offerings</li>
                     <li>Implemented tax calculation for US and Canada through Vertex Tax API</li>
                     <li>Performed CRUD operations using Amazon DynamoDB</li>
@@ -200,7 +267,7 @@ function App() {
                 </div>
                 <div>
                   <p className="text-gray-300 mb-2">Project: Allianz Global Investors - Reporting Services</p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
                     <li>Developed microservice components as data sources for financial reports</li>
                     <li>Created Excel report generation functionality</li>
                     <li>Built a graphics engine for dynamic chart generation using High Charts API</li>
@@ -215,7 +282,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 bg-gray-800/50">
+      <section id="skills" className="py-20 px-4 bg-gray-800/50 no-print">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-12 border-b border-blue-500 pb-2 inline-block">Technical Skills</h2>
           
@@ -496,7 +563,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-gray-800/50">
+      <section id="contact" className="py-20 px-4 bg-gray-800/50 no-print">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-12 border-b border-blue-500 pb-2 inline-block">Get In Touch</h2>
           
