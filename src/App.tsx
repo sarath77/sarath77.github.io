@@ -76,7 +76,7 @@ function App() {
             </div>
             <div>
               <h1 className="text-5xl font-bold mb-4">Sarath Chandra</h1>
-              <h2 className="text-2xl text-blue-400 mb-6">Senior Associate Platform L1</h2>
+              <h2 className="text-2xl text-blue-400 mb-6">Senior Full Stack Developer</h2>
               <p className="text-gray-300 text-lg mb-8 max-w-2xl">
                 Dedicated Java Full Stack Developer and AWS Certified Developer - Associate with {experience} of experience in developing enterprise 
                 web applications. Expertise in Java/J2EE, Spring Boot, Microservices, RESTful web services, Hibernate, Angular, and Apache Kafka.
@@ -192,6 +192,59 @@ function App() {
           <h2 className="text-3xl font-bold mb-12 border-b border-blue-500 pb-2 inline-block">Work Experience</h2>
           
           <div className="space-y-12">
+            {/* Ideam Technologies */}
+            <div className="relative pl-8 border-l-2 border-blue-600">
+              <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-1"></div>
+              <div className="mb-1 flex flex-wrap items-center gap-2">
+                <h3 className="text-xl font-bold">Senior Full Stack Developer</h3>
+                <span className="text-blue-400">• Ideam Technologies</span>
+              </div>
+              <p className="text-gray-400 mb-4">April 2025 - Present</p>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-300 mb-2">Project: Asset Management Portal (Client: Nuveen)</p>
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                    <li>Migrated legacy asset management portal applications to modern Spring Boot and React architecture</li>
+                    <li>Leveraged AI to develop Benchmark Reconciliation project in under 3 months, achieving up to 7x performance optimization by identifying Oracle stored procedure bottlenecks and query optimizations</li>
+                    <li>Handled end-to-end application development to deployment, including infrastructure provisioning using AWS EKS, S3, CloudFront, and Terraform</li>
+                    <li>Configured Kong API Gateway, CyberArk secrets management, and Splunk monitoring with custom alerts</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java 21</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Spring Boot</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Microservices</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">React</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">AWS EKS</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">S3</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">CloudFront</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Route 53</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Terraform</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Oracle</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Splunk</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Kong API</span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-gray-300 mb-2">Project: Fraud Analytics Platform (Client: TIAA)</p>
+                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
+                    <li>Developed Kafka consumers to process fraud analytics data, transforming and storing in Oracle DB</li>
+                    <li>Developed reconciliation feature to identify missing data in DB using Splunk API</li>
+                    <li>Developed external API call failure retry and email notification service</li>
+                    <li>Developed schedulers to clean up data</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Spring Boot</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Microservices</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Apache Kafka</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Oracle DB</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Splunk API</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">RESTful Services</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Publicis Sapient */}
             <div className="relative pl-8 border-l-2 border-blue-600">
               <div className="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-1"></div>
@@ -199,16 +252,25 @@ function App() {
                 <h3 className="text-xl font-bold">Senior Associate, Platform Level 1</h3>
                 <span className="text-blue-400">• Publicis Sapient</span>
               </div>
-              <p className="text-gray-400 mb-4">September 2021 - Present</p>
+              <p className="text-gray-400 mb-4">September 2021 - April 2025</p>
               <p className="text-gray-300 mb-4">Project: Goldman Sachs Marcus Highline - Quantum Core</p>
               <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                <li>Designed and developed RESTful APIs for efficient transaction data transfer with robust validations ensuring data integrity</li>
-                <li>Created and maintained React-based user interfaces for the Quantum ETL platform</li>
-                <li>Engineered notification service for timely delivery of compliance reports</li>
-                <li>Developed Snowflake queries to identify and address compliance issues related to card collections and recoveries</li>
-                <li>Implemented diverse calling strategies for effective customer interaction management</li>
-                <li>Created RESTful API layer exposing Elasticsearch data to downstream systems using query DSL</li>
+                <li>Designed and developed APIs to facilitate efficient data transfer of transactions, incorporating new validations to ensure data integrity</li>
+                <li>Utilized React to develop and maintain user interfaces for the Quantum ETL platform</li>
+                <li>Engineered a notification service for the timely delivery of compliance reports</li>
+                <li>Developed Snowflake queries to proactively identify and address compliance issues</li>
               </ul>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Spring Boot</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Microservices</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">React</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Snowflake</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">GBQ</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Drools</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">REST API</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Gradle</span>
+              </div>
             </div>
 
             {/* EPAM Systems */}
@@ -223,20 +285,35 @@ function App() {
                 <div>
                   <p className="text-gray-300 mb-2">Project: MasterCard Payment Gateway Services</p>
                   <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Developed end-to-end functionality for saved searches feature</li>
-                    <li>Implemented order reconciliation functionality</li>
-                    <li>Enhanced password validation system</li>
-                    <li>Contributed to Spring framework and Bootstrap upgrade initiatives</li>
+                    <li>Developed end-to-end functionality for saving searches and reconciliation feature for orders</li>
+                    <li>Was part of Spring and Bootstrap upgrade and improving password validations</li>
                   </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">REST API</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Postgres</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Cassandra</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Spring</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Microservices</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Hibernate</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">React</span>
+                  </div>
                 </div>
                 <div>
                   <p className="text-gray-300 mb-2">Project: Culture of Togetherness</p>
                   <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Designed and developed full-stack application from concept to deployment</li>
-                    <li>Integrated EPAM SSO with Spring Security</li>
-                    <li>Implemented Kafka messaging and Jenkins CI/CD pipeline</li>
-                    <li>Created detailed dashboards and APIs for performance analysis</li>
+                    <li>Designed and developed end-to-end applications from frontend, backend to deployment</li>
+                    <li>Integrated EPAM SSO with Spring Security, Kafka, and Jenkins for CI/CD pipeline</li>
                   </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Spring</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Apache Kafka</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">ReactJs</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">High Charts</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Jenkins</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Postgres</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,11 +328,17 @@ function App() {
               <p className="text-gray-400 mb-4">February 2019 - July 2019</p>
               <p className="text-gray-300 mb-2">Project: Agent E-Commerce</p>
               <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                <li>Resolved bugs in the Agent E-commerce portal</li>
-                <li>Worked with asynchronous frameworks for high performance and speed</li>
-                <li>Utilized Play Framework and Akka Framework for microservices development</li>
-                <li>Implemented RESTful Web Services with Redis and Elasticsearch</li>
+                <li>Primary work focused on maintaining ecommerce applications and bug fixes in Agent E-commerce portal</li>
               </ul>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java 8</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Play Framework</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Akka</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Microservices</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">RESTful Services</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Redis</span>
+                <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Elasticsearch</span>
+              </div>
             </div>
 
             {/* TCS */}
@@ -270,23 +353,20 @@ function App() {
                 <div>
                   <p className="text-gray-300 mb-2">Project: Bose Corporation (BOPIS)</p>
                   <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Designed and developed microservices for new customer offerings</li>
-                    <li>Implemented tax calculation for US and Canada through Vertex Tax API</li>
-                    <li>Performed CRUD operations using Amazon DynamoDB</li>
-                    <li>Developed Kafka consumer services with RESTful service integration</li>
-                    <li>Configured AWS S3 to send status alerts to SNS</li>
-                    <li>Achieved more than 95% test coverage with JUnit</li>
+                    <li>Part of a new team working on designing and developing services from ground-up using Microservices, Spring Boot and AWS</li>
+                    <li>Consumed data from Apache Kafka and performed RESTful service calls to other Microservices</li>
+                    <li>Configured S3 to send status change alerts to SNS and read data from S3 bucket to store in DynamoDB</li>
                   </ul>
-                </div>
-                <div>
-                  <p className="text-gray-300 mb-2">Project: Allianz Global Investors - Reporting Services</p>
-                  <ul className="list-disc pl-5 text-gray-300 space-y-2">
-                    <li>Developed microservice components as data sources for financial reports</li>
-                    <li>Created Excel report generation functionality</li>
-                    <li>Built a graphics engine for dynamic chart generation using High Charts API</li>
-                    <li>Implemented dashboard for monitoring report generation status</li>
-                    <li>Set up scheduled validation of reports and data completeness checks</li>
-                  </ul>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Java 8</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Spring Boot</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Microservices</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Apache Kafka</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">AWS</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">DynamoDB</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">Docker</span>
+                    <span className="text-xs bg-blue-600/20 text-blue-400 px-2 py-1 rounded">RESTful Services</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -667,7 +747,7 @@ function App() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <h2 className="text-xl font-bold">Sarath Chandra</h2>
-              <p className="text-gray-400">Senior Associate Platform L1</p>
+              <p className="text-gray-400">Senior Full Stack Developer</p>
             </div>
             
             <div className="flex space-x-4">
