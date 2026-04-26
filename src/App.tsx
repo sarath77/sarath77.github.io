@@ -34,7 +34,20 @@ import {
 import { FaJava } from "react-icons/fa";
 import './App.css';
 
+function getExperience() {
+  const start = new Date(2017, 0); // January 2017
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  let months = now.getMonth() - start.getMonth();
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  return months > 0 ? `${years}+ years ${months} months` : `${years}+ years`;
+}
+
 function App() {
+  const experience = getExperience();
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white" id="resume">
 
@@ -65,7 +78,7 @@ function App() {
               <h1 className="text-5xl font-bold mb-4">Sarath Chandra</h1>
               <h2 className="text-2xl text-blue-400 mb-6">Senior Associate Platform L1</h2>
               <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-                Dedicated Java Full Stack Developer and AWS Certified Developer - Associate with 8+ years of experience in developing enterprise 
+                Dedicated Java Full Stack Developer and AWS Certified Developer - Associate with {experience} of experience in developing enterprise 
                 web applications. Expertise in Java/J2EE, Spring Boot, Microservices, RESTful web services, Hibernate, Angular, and Apache Kafka.
               </p>
               <div className="flex space-x-4">
