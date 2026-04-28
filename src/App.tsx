@@ -76,12 +76,20 @@ function App() {
             </div>
             <div>
               <h1 className="text-5xl font-bold mb-4">Sarath Chandra</h1>
-              <h2 className="text-2xl text-blue-400 mb-6">Senior Full Stack Developer</h2>
+              <h2 className="text-2xl text-blue-400 mb-2">Senior Full Stack Developer</h2>
+              {/* Contact info visible only in PDF export */}
+              <div className="hidden print-only mb-4">
+                <p className="text-gray-300 flex flex-wrap items-center gap-4">
+                  <span className="flex items-center gap-1.5"><Phone size={14} /> +91 7207370470</span>
+                  <span className="flex items-center gap-1.5"><Mail size={14} /> sarathc.rox@gmail.com</span>
+                  <span className="flex items-center gap-1.5"><Linkedin size={14} /> linkedin.com/in/sarath77</span>
+                </p>
+              </div>
               <p className="text-gray-300 text-lg mb-8 max-w-2xl">
                 Dedicated Java Full Stack Developer and AWS Certified Developer - Associate with {experience} of experience in developing enterprise 
                 web applications. Expertise in Java/J2EE, Spring Boot, Microservices, RESTful web services, Hibernate, Angular, and Apache Kafka.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 no-print">
                 <a href="#contact" className="inline-flex items-center justify-center h-12 bg-blue-600 hover:bg-blue-700 text-white px-6 rounded-md font-medium transition-colors">
                   Contact Me
                 </a>
