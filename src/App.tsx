@@ -46,8 +46,35 @@ function getExperience() {
   return months > 0 ? `${years}+ years ${months} months` : `${years}+ years`;
 }
 
+// Calculate years of experience for a skill from its start date
+function yearsFrom(year: number, month: number = 0): number {
+  const start = new Date(year, month);
+  const now = new Date();
+  return Math.floor((now.getTime() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+}
+
 function App() {
   const experience = getExperience();
+
+  // Skill experience calculated from first usage in work history
+  const skills = {
+    java: yearsFrom(2017, 0),        // TCS - Jan 2017
+    springBoot: yearsFrom(2017, 0),   // TCS - Jan 2017
+    hibernate: yearsFrom(2017, 0),    // TCS - Jan 2017
+    kafka: yearsFrom(2017, 0),        // TCS - Jan 2017
+    aws: yearsFrom(2017, 0),          // TCS - Jan 2017
+    docker: yearsFrom(2017, 0),       // TCS - Jan 2017
+    dynamodb: yearsFrom(2017, 0),     // TCS - Jan 2017
+    elasticsearch: yearsFrom(2019, 1),// Verizon - Feb 2019
+    jsTs: yearsFrom(2019, 6),         // EPAM - Jul 2019
+    react: yearsFrom(2019, 6),        // EPAM - Jul 2019
+    postgres: yearsFrom(2019, 6),     // EPAM - Jul 2019
+    jenkins: yearsFrom(2019, 6),      // EPAM - Jul 2019
+    angular: yearsFrom(2021, 8),      // Publicis Sapient - Sep 2021
+    python: 3,                        // Supplementary skill
+    kubernetes: yearsFrom(2021, 8),   // Publicis Sapient - Sep 2021
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white" id="resume">
 
@@ -147,9 +174,9 @@ function App() {
                   <h3 className="text-lg font-bold">Languages & Core</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><FaJava size={14} className="text-blue-400 shrink-0"/> <span className="">Java (8y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiJavascript size={14} className="text-blue-400 shrink-0"/> <span className="">JS/TS (6y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiPython size={14} className="text-blue-400 shrink-0"/> <span className="">Python (3y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><FaJava size={14} className="text-blue-400 shrink-0"/> <span>Java ({skills.java}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiJavascript size={14} className="text-blue-400 shrink-0"/> <span>JS/TS ({skills.jsTs}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiPython size={14} className="text-blue-400 shrink-0"/> <span>Python ({skills.python}y)</span></div>
                 </div>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
@@ -158,10 +185,10 @@ function App() {
                   <h3 className="text-lg font-bold">Frameworks & Libraries</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiSpring size={14} className="text-blue-400 shrink-0"/> <span className="">Spring Boot (7y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiReact size={14} className="text-blue-400 shrink-0"/> <span className="">React (4y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAngular size={14} className="text-blue-400 shrink-0"/> <span className="">Angular (3y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiHibernate size={14} className="text-blue-400 shrink-0"/> <span className="">Hibernate (6y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiSpring size={14} className="text-blue-400 shrink-0"/> <span>Spring Boot ({skills.springBoot}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiReact size={14} className="text-blue-400 shrink-0"/> <span>React ({skills.react}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAngular size={14} className="text-blue-400 shrink-0"/> <span>Angular ({skills.angular}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiHibernate size={14} className="text-blue-400 shrink-0"/> <span>Hibernate ({skills.hibernate}y)</span></div>
                 </div>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
@@ -170,10 +197,10 @@ function App() {
                   <h3 className="text-lg font-bold">Cloud & DevOps</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAmazonwebservices size={14} className="text-blue-400 shrink-0"/> <span className="">AWS (5y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiDocker size={14} className="text-blue-400 shrink-0"/> <span className="">Docker (4y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiJenkins size={14} className="text-blue-400 shrink-0"/> <span className="">Jenkins (5y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiKubernetes size={14} className="text-blue-400 shrink-0"/> <span className="">Kubernetes (3y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAmazonwebservices size={14} className="text-blue-400 shrink-0"/> <span>AWS ({skills.aws}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiDocker size={14} className="text-blue-400 shrink-0"/> <span>Docker ({skills.docker}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiJenkins size={14} className="text-blue-400 shrink-0"/> <span>Jenkins ({skills.jenkins}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiKubernetes size={14} className="text-blue-400 shrink-0"/> <span>Kubernetes ({skills.kubernetes}y)</span></div>
                 </div>
               </div>
               <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
@@ -182,10 +209,10 @@ function App() {
                   <h3 className="text-lg font-bold">Databases & Tools</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiPostgresql size={14} className="text-blue-400 shrink-0"/> <span className="">PostgreSQL (6y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAmazondynamodb size={14} className="text-blue-400 shrink-0"/> <span className="">DynamoDB (4y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiElasticsearch size={14} className="text-blue-400 shrink-0"/> <span className="">Elasticsearch (4y)</span></div>
-                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiApachekafka size={14} className="text-blue-400 shrink-0"/> <span className="">Kafka (5y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiPostgresql size={14} className="text-blue-400 shrink-0"/> <span>PostgreSQL ({skills.postgres}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiAmazondynamodb size={14} className="text-blue-400 shrink-0"/> <span>DynamoDB ({skills.dynamodb}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiElasticsearch size={14} className="text-blue-400 shrink-0"/> <span>Elasticsearch ({skills.elasticsearch}y)</span></div>
+                  <div className="inline-flex items-center justify-center gap-1.5 bg-gray-900 px-2.5 py-1.5 rounded-md text-sm text-gray-300 border border-gray-700 leading-none"><SiApachekafka size={14} className="text-blue-400 shrink-0"/> <span>Kafka ({skills.kafka}y)</span></div>
                 </div>
               </div>
             </div>
@@ -401,7 +428,7 @@ function App() {
                       <FaJava className="text-blue-400" size={20} />
                       <span className="font-medium">Java</span>
                     </div>
-                    <span className="text-blue-400">8 years</span>
+                    <span className="text-blue-400">{skills.java} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '100%' }}></div>
@@ -414,7 +441,7 @@ function App() {
                       <SiJavascript className="text-blue-400" size={20} />
                       <span className="font-medium">JavaScript/TypeScript</span>
                     </div>
-                    <span className="text-blue-400">6 years</span>
+                    <span className="text-blue-400">{skills.jsTs} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
@@ -427,7 +454,7 @@ function App() {
                       <SiPython className="text-blue-400" size={20} />
                       <span className="font-medium">Python</span>
                     </div>
-                    <span className="text-blue-400">3 years</span>
+                    <span className="text-blue-400">{skills.python} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '40%' }}></div>
@@ -449,7 +476,7 @@ function App() {
                       <SiSpring className="text-blue-400" size={20} />
                       <span className="font-medium">Spring Boot</span>
                     </div>
-                    <span className="text-blue-400">7 years</span>
+                    <span className="text-blue-400">{skills.springBoot} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '90%' }}></div>
@@ -462,7 +489,7 @@ function App() {
                       <SiReact className="text-blue-400" size={20} />
                       <span className="font-medium">React</span>
                     </div>
-                    <span className="text-blue-400">4 years</span>
+                    <span className="text-blue-400">{skills.react} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '65%' }}></div>
@@ -475,7 +502,7 @@ function App() {
                       <SiAngular className="text-blue-400" size={20} />
                       <span className="font-medium">Angular</span>
                     </div>
-                    <span className="text-blue-400">3 years</span>
+                    <span className="text-blue-400">{skills.angular} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '50%' }}></div>
@@ -488,7 +515,7 @@ function App() {
                       <SiHibernate className="text-blue-400" size={20} />
                       <span className="font-medium">Hibernate</span>
                     </div>
-                    <span className="text-blue-400">6 years</span>
+                    <span className="text-blue-400">{skills.hibernate} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '80%' }}></div>
@@ -510,7 +537,7 @@ function App() {
                       <SiAmazonwebservices className="text-blue-400" size={20} />
                       <span className="font-medium">AWS</span>
                     </div>
-                    <span className="text-blue-400">5 years</span>
+                    <span className="text-blue-400">{skills.aws} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
@@ -523,7 +550,7 @@ function App() {
                       <SiDocker className="text-blue-400" size={20} />
                       <span className="font-medium">Docker</span>
                     </div>
-                    <span className="text-blue-400">4 years</span>
+                    <span className="text-blue-400">{skills.docker} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '70%' }}></div>
@@ -536,7 +563,7 @@ function App() {
                       <SiJenkins className="text-blue-400" size={20} />
                       <span className="font-medium">Jenkins</span>
                     </div>
-                    <span className="text-blue-400">5 years</span>
+                    <span className="text-blue-400">{skills.jenkins} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
@@ -549,7 +576,7 @@ function App() {
                       <SiKubernetes className="text-blue-400" size={20} />
                       <span className="font-medium">Kubernetes</span>
                     </div>
-                    <span className="text-blue-400">3 years</span>
+                    <span className="text-blue-400">{skills.kubernetes} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '50%' }}></div>
@@ -571,7 +598,7 @@ function App() {
                       <SiPostgresql className="text-blue-400" size={20} />
                       <span className="font-medium">PostgreSQL</span>
                     </div>
-                    <span className="text-blue-400">6 years</span>
+                    <span className="text-blue-400">{skills.postgres} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '80%' }}></div>
@@ -584,7 +611,7 @@ function App() {
                       <SiAmazondynamodb className="text-blue-400" size={20} />
                       <span className="font-medium">DynamoDB</span>
                     </div>
-                    <span className="text-blue-400">4 years</span>
+                    <span className="text-blue-400">{skills.dynamodb} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '65%' }}></div>
@@ -597,7 +624,7 @@ function App() {
                       <SiElasticsearch className="text-blue-400" size={20} />
                       <span className="font-medium">Elasticsearch</span>
                     </div>
-                    <span className="text-blue-400">4 years</span>
+                    <span className="text-blue-400">{skills.elasticsearch} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '70%' }}></div>
@@ -610,7 +637,7 @@ function App() {
                       <SiApachekafka className="text-blue-400" size={20} />
                       <span className="font-medium">Apache Kafka</span>
                     </div>
-                    <span className="text-blue-400">5 years</span>
+                    <span className="text-blue-400">{skills.kafka} years</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div className="bg-blue-600 h-2 rounded-full" style={{ width: '75%' }}></div>
