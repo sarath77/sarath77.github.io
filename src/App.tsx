@@ -89,6 +89,7 @@ function App() {
               <li><a href="#skills" className="hover:text-blue-400 transition-colors">Skills</a></li>
               <li><a href="#education" className="hover:text-blue-400 transition-colors">Education</a></li>
               <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="/resume" className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md text-sm font-medium transition-colors">ATS Resume</a></li>
             </ul>
           </nav>
         </div>

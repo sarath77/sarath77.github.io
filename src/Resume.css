@@ -1,0 +1,179 @@
+/* ATS-friendly Resume Styles */
+/* Clean, simple, serif-based layout optimized for ATS parsers and PDF export */
+
+.ats-resume {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 48px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+/* Header */
+.ats-header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.ats-header h1 {
+  font-size: 22pt;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ats-title {
+  font-size: 13pt;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-weight: 400;
+}
+
+.ats-contact {
+  font-size: 10pt;
+  color: #444;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ats-sep {
+  color: #999;
+  margin: 0 4px;
+}
+
+/* Sections */
+.ats-section {
+  margin-bottom: 16px;
+}
+
+.ats-section h2 {
+  font-size: 13pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid #333;
+  padding-bottom: 3px;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.ats-section > p {
+  margin: 0 0 8px 0;
+  text-align: justify;
+}
+
+/* Skills Table */
+.ats-skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+
+.ats-skills-table td {
+  padding: 3px 8px;
+  vertical-align: top;
+  border: none;
+}
+
+.ats-skill-label {
+  font-weight: 700;
+  white-space: nowrap;
+  width: 130px;
+  color: #333;
+}
+
+/* Job entries */
+.ats-job {
+  margin-bottom: 14px;
+}
+
+.ats-job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.ats-date {
+  font-style: italic;
+  color: #555;
+  font-size: 10pt;
+  white-space: nowrap;
+}
+
+/* Projects */
+.ats-project {
+  margin: 6px 0 10px 0;
+}
+
+.ats-project-title {
+  font-weight: 600;
+  font-style: italic;
+  margin: 0 0 3px 0;
+  color: #333;
+}
+
+.ats-project ul,
+.ats-section > ul {
+  margin: 3px 0 6px 0;
+  padding-left: 20px;
+}
+
+.ats-project li,
+.ats-section > ul li {
+  margin-bottom: 3px;
+  font-size: 10.5pt;
+  line-height: 1.45;
+}
+
+.ats-tech {
+  font-size: 9.5pt;
+  color: #555;
+  margin: 3px 0 0 0;
+  font-style: italic;
+}
+
+/* Print styles */
+@media print {
+  @page {
+    margin: 0.5in 0.6in;
+    size: letter;
+  }
+
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ats-resume {
+    padding: 0;
+    max-width: none;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Screen-only background */
+@media screen {
+  body:has(.ats-resume) {
+    background: #e5e7eb;
+  }
+
+  .ats-resume {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border-radius: 4px;
+  }
+}
