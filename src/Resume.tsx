@@ -9,7 +9,12 @@ import {
   Cpu, 
   Briefcase, 
   GraduationCap, 
-  Award 
+  Award,
+  Code2,
+  Layers,
+  Cloud,
+  Database,
+  Wrench
 } from 'lucide-react';
 import './Resume.css';
 
@@ -73,26 +78,65 @@ function Resume() {
         <h2>
           <Cpu size={16} className="ats-section-icon" /> Technical Skills
         </h2>
-        <div className="ats-skills-compact">
-          <div className="ats-skill-row">
-            <span className="ats-skill-cat ats-tag-lang">Languages</span>
-            <span className="ats-skill-items">Java (8/11/21), JavaScript, TypeScript, Python, SQL</span>
+        <div className="ats-skills-grid">
+          {/* Languages */}
+          <div className="ats-skill-card ats-skill-card-lang">
+            <div className="ats-skill-card-label">
+              <Code2 size={13} /> Languages
+            </div>
+            <div className="ats-skill-tags">
+              {['Java (8/11/21)', 'JavaScript', 'TypeScript', 'Python', 'SQL'].map(s => (
+                <span key={s} className="ats-tag ats-tag-lang">{s}</span>
+              ))}
+            </div>
           </div>
-          <div className="ats-skill-row">
-            <span className="ats-skill-cat ats-tag-fw">Frameworks</span>
-            <span className="ats-skill-items">Spring Boot, Spring Cloud, Spring Security, Spring Data JPA, Spring Batch, Hibernate, React, Angular, Play/Akka</span>
+
+          {/* Frameworks & Libraries */}
+          <div className="ats-skill-card ats-skill-card-fw">
+            <div className="ats-skill-card-label">
+              <Layers size={13} /> Frameworks & Libraries
+            </div>
+            <div className="ats-skill-tags">
+              {['Spring Boot', 'Spring Cloud', 'Spring Security', 'Spring Data JPA', 'Spring Batch', 'Hibernate', 'React', 'Angular', 'Play/Akka'].map(s => (
+                <span key={s} className="ats-tag ats-tag-fw">{s}</span>
+              ))}
+            </div>
           </div>
-          <div className="ats-skill-row">
-            <span className="ats-skill-cat ats-tag-cloud">Cloud & DevOps</span>
-            <span className="ats-skill-items">AWS (EKS, S3, CloudFront, Route 53, Lambda, SNS, SQS, DynamoDB), Terraform, Docker, Kubernetes, Jenkins, Git, Shell Scripting</span>
+
+          {/* Cloud & DevOps */}
+          <div className="ats-skill-card ats-skill-card-cloud">
+            <div className="ats-skill-card-label">
+              <Cloud size={13} /> Cloud & DevOps
+            </div>
+            <div className="ats-skill-tags">
+              {['AWS (EKS, S3, CloudFront, Route 53)', 'AWS (Lambda, SNS, SQS, DynamoDB)', 'Terraform', 'Docker', 'Kubernetes', 'Jenkins', 'Git'].map(s => (
+                <span key={s} className="ats-tag ats-tag-cloud">{s}</span>
+              ))}
+            </div>
           </div>
-          <div className="ats-skill-row">
-            <span className="ats-skill-cat ats-tag-data">Data & Messaging</span>
-            <span className="ats-skill-items">Apache Kafka, Oracle, PostgreSQL, Snowflake, Cassandra, Elasticsearch, Redis, Splunk, DynamoDB, GBQ, Firestore</span>
+
+          {/* Data & Messaging */}
+          <div className="ats-skill-card ats-skill-card-data">
+            <div className="ats-skill-card-label">
+              <Database size={13} /> Data & Messaging
+            </div>
+            <div className="ats-skill-tags">
+              {['Apache Kafka', 'Oracle', 'PostgreSQL', 'Snowflake', 'Cassandra', 'Elasticsearch', 'Redis', 'Splunk', 'DynamoDB', 'GBQ', 'Firestore'].map(s => (
+                <span key={s} className="ats-tag ats-tag-data">{s}</span>
+              ))}
+            </div>
           </div>
-          <div className="ats-skill-row">
-            <span className="ats-skill-cat ats-tag-tool">Tools & Arch</span>
-            <span className="ats-skill-items">Microservices, RESTful APIs, Kong API Gateway, CyberArk, Maven, Gradle, SBT, JUnit, Mockito, Drools, Apache POI</span>
+
+          {/* Tools & Architecture */}
+          <div className="ats-skill-card ats-skill-card-tool">
+            <div className="ats-skill-card-label">
+              <Wrench size={13} /> Tools & Architecture
+            </div>
+            <div className="ats-skill-tags">
+              {['Microservices', 'RESTful APIs', 'Kong API Gateway', 'CyberArk', 'Maven', 'Gradle', 'SBT', 'JUnit', 'Mockito', 'Drools', 'Apache POI'].map(s => (
+                <span key={s} className="ats-tag ats-tag-tool">{s}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
