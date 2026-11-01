@@ -1,4 +1,3 @@
-import { exportResumeToPDF } from './exportPDF';
 import React from 'react';
 import { 
   Github, 
@@ -89,7 +88,7 @@ function App() {
               <li><a href="#skills" className="hover:text-blue-400 transition-colors">Skills</a></li>
               <li><a href="#education" className="hover:text-blue-400 transition-colors">Education</a></li>
               <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
-              <li><a href="/resume" className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md text-sm font-medium transition-colors">ATS Resume</a></li>
+              <li><a href="/resume" className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded-md text-sm font-medium transition-colors">Resume</a></li>
             </ul>
           </nav>
         </div>
@@ -153,15 +152,9 @@ function App() {
               <a href="https://www.linkedin.com/in/sarath77/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
                 <Linkedin size={20} /> LinkedIn
               </a>
-              <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors">
+              <a href="/resume" className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors border border-blue-400 px-3 py-1 rounded-md">
                 <FileText size={20} /> Resume
               </a>
-                <button
-                  onClick={() => exportResumeToPDF()}
-                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors border border-blue-400 px-3 py-1 rounded-md"
-                >
-                  <FileText size={20} /> Export PDF
-                </button>
             </div>
           </div>
 

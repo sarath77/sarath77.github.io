@@ -1,97 +1,244 @@
-/* ATS-friendly Resume Styles */
-/* Clean, simple, serif-based layout optimized for ATS parsers and PDF export */
+/* ==============================================
+   ATS-Friendly Resume — Styled Edition
+   Clean structure for parsers, polished for humans
+   ============================================== */
 
+:root {
+  --ats-primary: #1e40af;
+  --ats-primary-light: #3b82f6;
+  --ats-primary-bg: #eff6ff;
+  --ats-accent: #0f766e;
+  --ats-accent-bg: #f0fdfa;
+  --ats-purple: #7c3aed;
+  --ats-purple-bg: #f5f3ff;
+  --ats-amber: #b45309;
+  --ats-amber-bg: #fffbeb;
+  --ats-rose: #be123c;
+  --ats-rose-bg: #fff1f2;
+  --ats-slate: #334155;
+  --ats-text: #1e293b;
+  --ats-text-muted: #64748b;
+  --ats-border: #e2e8f0;
+  --ats-bg: #ffffff;
+}
+
+/* ---- Page Container ---- */
 .ats-resume {
   max-width: 850px;
   margin: 0 auto;
-  padding: 40px 48px;
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 11pt;
-  line-height: 1.5;
-  color: #1a1a1a;
-  background: #ffffff;
+  padding: 36px 44px;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--ats-text);
+  background: var(--ats-bg);
 }
 
-/* Header */
+/* ---- Floating Action Bar ---- */
+.ats-action-bar {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 50;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ats-btn {
+  padding: 9px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.ats-btn-primary {
+  background: var(--ats-primary);
+  color: #fff;
+}
+.ats-btn-primary:hover {
+  background: #1e3a8a;
+  box-shadow: 0 4px 14px rgba(30,64,175,0.35);
+}
+
+.ats-btn-secondary {
+  background: #fff;
+  color: var(--ats-slate);
+  border: 1px solid var(--ats-border);
+}
+.ats-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* ---- Header ---- */
 .ats-header {
   text-align: center;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--ats-primary);
+  background: linear-gradient(135deg, var(--ats-primary-bg) 0%, #fff 100%);
+  margin: -36px -44px 20px -44px;
+  padding: 32px 44px 20px 44px;
+  border-radius: 0;
 }
 
 .ats-header h1 {
-  font-size: 22pt;
-  font-weight: 700;
+  font-size: 24pt;
+  font-weight: 800;
   margin: 0 0 4px 0;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+  color: var(--ats-primary);
+  letter-spacing: -0.5px;
 }
 
 .ats-title {
   font-size: 13pt;
-  color: #333;
-  margin: 0 0 8px 0;
-  font-weight: 400;
+  color: var(--ats-text-muted);
+  margin: 0 0 12px 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .ats-contact {
   font-size: 10pt;
-  color: #444;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 6px;
+  align-items: center;
 }
 
-.ats-sep {
-  color: #999;
-  margin: 0 4px;
+.ats-contact a {
+  color: var(--ats-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.ats-contact a:hover {
+  color: var(--ats-primary-light);
 }
 
-/* Sections */
+.ats-dot {
+  color: #cbd5e1;
+  font-size: 8pt;
+}
+
+/* ---- Sections ---- */
 .ats-section {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .ats-section h2 {
-  font-size: 13pt;
+  font-size: 12pt;
   font-weight: 700;
   text-transform: uppercase;
-  border-bottom: 1px solid #333;
-  padding-bottom: 3px;
-  margin: 0 0 8px 0;
-  letter-spacing: 0.5px;
+  color: var(--ats-primary);
+  border-bottom: 2px solid var(--ats-primary-light);
+  padding-bottom: 5px;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.ats-section > p {
-  margin: 0 0 8px 0;
+.ats-section-icon {
+  font-size: 14pt;
+}
+
+/* ---- Summary ---- */
+.ats-summary-text {
+  margin: 0;
   text-align: justify;
+  color: var(--ats-text);
+  background: var(--ats-primary-bg);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--ats-primary);
+  line-height: 1.6;
 }
 
-/* Skills Table */
-.ats-skills-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 10.5pt;
+/* ---- Skills Grid ---- */
+.ats-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-.ats-skills-table td {
-  padding: 3px 8px;
-  vertical-align: top;
-  border: none;
+.ats-skill-card {
+  background: #f8fafc;
+  border: 1px solid var(--ats-border);
+  border-radius: 8px;
+  padding: 10px 14px;
 }
 
-.ats-skill-label {
+.ats-skill-card:first-child {
+  grid-column: 1 / -1;
+}
+
+.ats-skill-card-label {
   font-weight: 700;
-  white-space: nowrap;
-  width: 130px;
-  color: #333;
+  font-size: 9.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ats-text-muted);
+  margin-bottom: 6px;
 }
 
-/* Job entries */
+.ats-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ats-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 9pt;
+  font-weight: 500;
+}
+
+.ats-tag-lang {
+  background: var(--ats-primary-bg);
+  color: var(--ats-primary);
+  border: 1px solid #bfdbfe;
+}
+
+.ats-tag-fw {
+  background: var(--ats-accent-bg);
+  color: var(--ats-accent);
+  border: 1px solid #99f6e4;
+}
+
+.ats-tag-cloud {
+  background: var(--ats-purple-bg);
+  color: var(--ats-purple);
+  border: 1px solid #ddd6fe;
+}
+
+.ats-tag-data {
+  background: var(--ats-amber-bg);
+  color: var(--ats-amber);
+  border: 1px solid #fde68a;
+}
+
+.ats-tag-tool {
+  background: var(--ats-rose-bg);
+  color: var(--ats-rose);
+  border: 1px solid #fecdd3;
+}
+
+/* ---- Job Entries ---- */
 .ats-job {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  padding-left: 14px;
+  border-left: 3px solid var(--ats-primary-light);
 }
 
 .ats-job-header {
@@ -102,49 +249,134 @@
   margin-bottom: 2px;
 }
 
+.ats-job-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ats-job-title strong {
+  font-size: 11pt;
+  color: var(--ats-text);
+}
+
+.ats-company {
+  color: var(--ats-primary);
+  font-weight: 600;
+  font-size: 10.5pt;
+}
+
 .ats-date {
-  font-style: italic;
-  color: #555;
-  font-size: 10pt;
+  font-size: 9.5pt;
+  color: var(--ats-text-muted);
+  font-weight: 500;
+  background: #f1f5f9;
+  padding: 2px 10px;
+  border-radius: 12px;
   white-space: nowrap;
 }
 
-/* Projects */
+/* ---- Projects ---- */
 .ats-project {
-  margin: 6px 0 10px 0;
+  margin: 8px 0 12px 0;
 }
 
 .ats-project-title {
   font-weight: 600;
-  font-style: italic;
-  margin: 0 0 3px 0;
-  color: #333;
+  margin: 0 0 4px 0;
+  color: var(--ats-slate);
+  font-size: 10pt;
 }
 
-.ats-project ul,
-.ats-section > ul {
-  margin: 3px 0 6px 0;
-  padding-left: 20px;
+.ats-client {
+  color: var(--ats-primary-light);
+  font-weight: 500;
 }
 
-.ats-project li,
-.ats-section > ul li {
+.ats-project ul {
+  margin: 4px 0 6px 0;
+  padding-left: 18px;
+}
+
+.ats-project li {
   margin-bottom: 3px;
-  font-size: 10.5pt;
-  line-height: 1.45;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--ats-text);
 }
 
-.ats-tech {
+.ats-project li::marker {
+  color: var(--ats-primary-light);
+}
+
+/* ---- Tech Tags per project ---- */
+.ats-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.ats-tech-tag {
+  display: inline-block;
+  font-size: 8pt;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: var(--ats-text-muted);
+  border: 1px solid var(--ats-border);
+  letter-spacing: 0.2px;
+}
+
+/* ---- Two-Column Layout ---- */
+.ats-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ---- Education ---- */
+.ats-edu-card {
+  background: var(--ats-primary-bg);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #bfdbfe;
+}
+
+.ats-edu-detail {
+  color: var(--ats-text-muted);
   font-size: 9.5pt;
-  color: #555;
-  margin: 3px 0 0 0;
-  font-style: italic;
 }
 
-/* Print styles */
+/* ---- Certifications ---- */
+.ats-cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ats-cert-list li {
+  padding: 6px 12px;
+  margin-bottom: 6px;
+  background: var(--ats-amber-bg);
+  border-radius: 6px;
+  border: 1px solid #fde68a;
+  font-size: 10pt;
+}
+
+.ats-cert-year {
+  color: var(--ats-text-muted);
+  font-size: 9pt;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
 @media print {
   @page {
-    margin: 0.5in 0.6in;
+    margin: 0.4in 0.5in;
     size: letter;
   }
 
@@ -162,18 +394,49 @@
   .no-print {
     display: none !important;
   }
+
+  .ats-header {
+    margin: 0 0 16px 0;
+    padding: 0 0 14px 0;
+  }
+
+  .ats-job {
+    break-inside: avoid;
+  }
+
+  .ats-section {
+    break-inside: avoid;
+  }
 }
 
-/* Screen-only background */
+/* ============================================
+   Screen-Only Enhancements
+   ============================================ */
 @media screen {
   body:has(.ats-resume) {
-    background: #e5e7eb;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    min-height: 100vh;
   }
 
   .ats-resume {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    border-radius: 4px;
+    margin: 24px auto 48px auto;
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.06),
+      0 10px 40px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .ats-header {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .ats-job {
+    transition: background 0.2s;
+  }
+
+  .ats-job:hover {
+    background: #fafbfd;
+    border-radius: 8px;
   }
 }
