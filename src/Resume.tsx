@@ -14,16 +14,16 @@ import {
   Layers,
   Cloud,
   Database,
-  Wrench
+  Wrench,
+  Printer
 } from 'lucide-react';
 import './Resume.css';
 
 function Resume() {
-  const handleDownload = () => {
+  const handlePrint = () => {
     const originalTitle = document.title;
     document.title = 'Sarath_Chandra_Resume';
     window.print();
-    // restore original title after print dialog closes
     setTimeout(() => {
       document.title = originalTitle;
     }, 1000);
@@ -34,10 +34,22 @@ function Resume() {
       {/* Floating action bar - hidden in print */}
       <div className="ats-action-bar no-print">
         <a href="/" className="ats-btn ats-btn-secondary">
-          <ArrowLeft size={16} /> Portfolio
+          <ArrowLeft size={15} /> Portfolio
         </a>
-        <button onClick={handleDownload} className="ats-btn ats-btn-primary">
-          <Download size={16} /> Download PDF
+        <a 
+          href="/Sarath_Chandra_Resume.pdf" 
+          download="Sarath_Chandra_Resume.pdf" 
+          className="ats-btn ats-btn-primary"
+          title="Instant 1-click download of the 2-page PDF"
+        >
+          <Download size={15} /> Download PDF
+        </a>
+        <button 
+          onClick={handlePrint} 
+          className="ats-btn ats-btn-outline" 
+          title="Print directly or save via browser print dialog"
+        >
+          <Printer size={15} /> Print
         </button>
       </div>
 

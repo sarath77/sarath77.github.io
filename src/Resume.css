@@ -79,6 +79,16 @@
   border-color: #cbd5e1;
 }
 
+.ats-btn-outline {
+  background: #fff;
+  color: var(--ats-primary);
+  border: 1.5px solid var(--ats-primary-light);
+}
+.ats-btn-outline:hover {
+  background: var(--ats-primary-bg);
+  border-color: var(--ats-primary);
+}
+
 /* ---- Header ---- */
 .ats-header {
   text-align: center;
