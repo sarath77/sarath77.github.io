@@ -30,7 +30,12 @@ async def main():
             path=OUTPUT_PATH,
             format='Letter',
             print_background=True,
-            prefer_css_page_size=True
+            margin={
+                'top': '0.5in',
+                'bottom': '0.5in',
+                'left': '0.5in',
+                'right': '0.5in'
+            }
         )
         await browser.close()
         print(f"✅ Generated: {OUTPUT_PATH}")
