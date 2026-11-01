@@ -1,25 +1,39 @@
 import React from 'react';
+import { 
+  Phone, 
+  Mail, 
+  Linkedin, 
+  ArrowLeft, 
+  Download, 
+  FileText, 
+  Cpu, 
+  Briefcase, 
+  GraduationCap, 
+  Award 
+} from 'lucide-react';
 import './Resume.css';
 
-function getExperienceYears(): number {
-  const start = new Date(2017, 0);
-  const now = new Date();
-  return Math.floor((now.getTime() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
-}
-
 function Resume() {
-  const years = getExperienceYears();
-
   const handleDownload = () => {
+    const originalTitle = document.title;
+    document.title = 'Sarath_Chandra_Resume';
     window.print();
+    // restore original title after print dialog closes
+    setTimeout(() => {
+      document.title = originalTitle;
+    }, 1000);
   };
 
   return (
     <div className="ats-resume">
       {/* Floating action bar - hidden in print */}
       <div className="ats-action-bar no-print">
-        <a href="/" className="ats-btn ats-btn-secondary">← Portfolio</a>
-        <button onClick={handleDownload} className="ats-btn ats-btn-primary">⬇ Download PDF</button>
+        <a href="/" className="ats-btn ats-btn-secondary">
+          <ArrowLeft size={16} /> Portfolio
+        </a>
+        <button onClick={handleDownload} className="ats-btn ats-btn-primary">
+          <Download size={16} /> Download PDF
+        </button>
       </div>
 
       {/* Header */}
@@ -27,78 +41,69 @@ function Resume() {
         <h1>Vankadaru Raja Sarath Chandra</h1>
         <p className="ats-title">Senior Full Stack Developer</p>
         <div className="ats-contact">
-          <a href="tel:+917207370470">📞 +91 7207370470</a>
+          <a href="tel:+917207370470" className="ats-contact-link">
+            <Phone size={13} className="ats-contact-icon" /> +91 7207370470
+          </a>
           <span className="ats-dot">•</span>
-          <a href="mailto:sarathc.rox@gmail.com">✉ sarathc.rox@gmail.com</a>
+          <a href="mailto:sarathc.rox@gmail.com" className="ats-contact-link">
+            <Mail size={13} className="ats-contact-icon" /> sarathc.rox@gmail.com
+          </a>
           <span className="ats-dot">•</span>
-          <a href="https://linkedin.com/in/sarath77" target="_blank" rel="noopener noreferrer">🔗 linkedin.com/in/sarath77</a>
+          <a href="https://linkedin.com/in/sarath77" target="_blank" rel="noopener noreferrer" className="ats-contact-link">
+            <Linkedin size={13} className="ats-contact-icon" /> linkedin.com/in/sarath77
+          </a>
         </div>
       </header>
 
-      {/* Summary */}
+      {/* Professional Summary */}
       <section className="ats-section">
-        <h2><span className="ats-section-icon">📋</span> Professional Summary</h2>
+        <h2>
+          <FileText size={16} className="ats-section-icon" /> Professional Summary
+        </h2>
         <p className="ats-summary-text">
-          Java Full Stack Developer and <strong>AWS Certified Developer – Associate</strong> with close to <strong>{years} years</strong> of experience
-          in developing web-based applications. Strengths in Java/J2EE Technologies, Spring Boot, Microservices,
-          RESTful web services, Hibernate, React, and Apache Kafka. Good knowledge of Banking, Asset Management,
-          and E-Commerce platforms. Experienced in leveraging AI for performance optimization, achieving up to
-          7x improvements. Team player with strong problem-solving, communication, and analytical skills.
+          Java Full Stack Developer and <strong>AWS Certified Developer – Associate</strong> with close to <strong>10 years</strong> of experience
+          in architecting, developing, and deploying enterprise web-based applications. Core expertise in <strong>Java/J2EE</strong>, <strong>Spring Boot</strong>, <strong>Microservices</strong>,
+          <strong>RESTful APIs</strong>, <strong>Hibernate</strong>, <strong>React</strong>, and <strong>Apache Kafka</strong>. Strong domain knowledge in Banking, Asset Management,
+          and E-Commerce platforms. Proven track record in leveraging AI tools for performance optimization, achieving up to <strong>7x performance gains</strong>. Team player with strong problem-solving, communication, and analytical skills.
         </p>
       </section>
 
-      {/* Skills */}
+      {/* Technical Skills */}
       <section className="ats-section">
-        <h2><span className="ats-section-icon">⚡</span> Technical Skills</h2>
-        <div className="ats-skills-grid">
-          <div className="ats-skill-card">
-            <div className="ats-skill-card-label">Languages</div>
-            <div className="ats-skill-tags">
-              {['Java (8/11/21)', 'JavaScript', 'TypeScript', 'Python', 'SQL'].map(s => (
-                <span key={s} className="ats-tag ats-tag-lang">{s}</span>
-              ))}
-            </div>
+        <h2>
+          <Cpu size={16} className="ats-section-icon" /> Technical Skills
+        </h2>
+        <div className="ats-skills-compact">
+          <div className="ats-skill-row">
+            <span className="ats-skill-cat ats-tag-lang">Languages</span>
+            <span className="ats-skill-items">Java (8/11/21), JavaScript, TypeScript, Python, SQL</span>
           </div>
-          <div className="ats-skill-card">
-            <div className="ats-skill-card-label">Frameworks</div>
-            <div className="ats-skill-tags">
-              {['Spring Boot', 'Spring Cloud', 'Spring Security', 'Spring Data JPA', 'Spring Batch', 'Hibernate', 'React', 'Angular', 'Play/Akka'].map(s => (
-                <span key={s} className="ats-tag ats-tag-fw">{s}</span>
-              ))}
-            </div>
+          <div className="ats-skill-row">
+            <span className="ats-skill-cat ats-tag-fw">Frameworks</span>
+            <span className="ats-skill-items">Spring Boot, Spring Cloud, Spring Security, Spring Data JPA, Spring Batch, Hibernate, React, Angular, Play/Akka</span>
           </div>
-          <div className="ats-skill-card">
-            <div className="ats-skill-card-label">Cloud & DevOps</div>
-            <div className="ats-skill-tags">
-              {['AWS (EKS, S3, CloudFront, Route 53, Lambda, SNS, SQS, DynamoDB)', 'Terraform', 'Docker', 'Kubernetes', 'Jenkins', 'Git'].map(s => (
-                <span key={s} className="ats-tag ats-tag-cloud">{s}</span>
-              ))}
-            </div>
+          <div className="ats-skill-row">
+            <span className="ats-skill-cat ats-tag-cloud">Cloud & DevOps</span>
+            <span className="ats-skill-items">AWS (EKS, S3, CloudFront, Route 53, Lambda, SNS, SQS, DynamoDB), Terraform, Docker, Kubernetes, Jenkins, Git, Shell Scripting</span>
           </div>
-          <div className="ats-skill-card">
-            <div className="ats-skill-card-label">Data & Messaging</div>
-            <div className="ats-skill-tags">
-              {['Apache Kafka', 'Oracle', 'PostgreSQL', 'Snowflake', 'Cassandra', 'Elasticsearch', 'Redis', 'Splunk', 'DynamoDB', 'GBQ'].map(s => (
-                <span key={s} className="ats-tag ats-tag-data">{s}</span>
-              ))}
-            </div>
+          <div className="ats-skill-row">
+            <span className="ats-skill-cat ats-tag-data">Data & Messaging</span>
+            <span className="ats-skill-items">Apache Kafka, Oracle, PostgreSQL, Snowflake, Cassandra, Elasticsearch, Redis, Splunk, DynamoDB, GBQ, Firestore</span>
           </div>
-          <div className="ats-skill-card">
-            <div className="ats-skill-card-label">Tools</div>
-            <div className="ats-skill-tags">
-              {['Kong API Gateway', 'CyberArk', 'Maven', 'Gradle', 'SBT', 'JUnit', 'Mockito', 'Drools', 'Apache POI'].map(s => (
-                <span key={s} className="ats-tag ats-tag-tool">{s}</span>
-              ))}
-            </div>
+          <div className="ats-skill-row">
+            <span className="ats-skill-cat ats-tag-tool">Tools & Arch</span>
+            <span className="ats-skill-items">Microservices, RESTful APIs, Kong API Gateway, CyberArk, Maven, Gradle, SBT, JUnit, Mockito, Drools, Apache POI</span>
           </div>
         </div>
       </section>
 
       {/* Work Experience */}
       <section className="ats-section">
-        <h2><span className="ats-section-icon">💼</span> Work Experience</h2>
+        <h2>
+          <Briefcase size={16} className="ats-section-icon" /> Work Experience
+        </h2>
 
-        {/* Ideam Technologies */}
+        {/* 1. Ideam Technologies (Page 1) */}
         <div className="ats-job">
           <div className="ats-job-header">
             <div className="ats-job-title">
@@ -139,8 +144,8 @@ function Resume() {
           </div>
         </div>
 
-        {/* Publicis Sapient */}
-        <div className="ats-job">
+        {/* 2. Publicis Sapient (Starts Page 2 cleanly in print) */}
+        <div className="ats-job ats-page-break">
           <div className="ats-job-header">
             <div className="ats-job-title">
               <strong>Senior Associate, Platform Level 1</strong>
@@ -164,7 +169,7 @@ function Resume() {
           </div>
         </div>
 
-        {/* EPAM */}
+        {/* 3. EPAM */}
         <div className="ats-job">
           <div className="ats-job-header">
             <div className="ats-job-title">
@@ -199,7 +204,7 @@ function Resume() {
           </div>
         </div>
 
-        {/* Verizon */}
+        {/* 4. Verizon */}
         <div className="ats-job">
           <div className="ats-job-header">
             <div className="ats-job-title">
@@ -221,7 +226,7 @@ function Resume() {
           </div>
         </div>
 
-        {/* TCS */}
+        {/* 5. TCS */}
         <div className="ats-job">
           <div className="ats-job-header">
             <div className="ats-job-title">
@@ -246,10 +251,12 @@ function Resume() {
         </div>
       </section>
 
-      {/* Education & Certs side-by-side */}
+      {/* Education & Certifications side-by-side */}
       <div className="ats-two-col">
         <section className="ats-section">
-          <h2><span className="ats-section-icon">🎓</span> Education</h2>
+          <h2>
+            <GraduationCap size={16} className="ats-section-icon" /> Education
+          </h2>
           <div className="ats-edu-card">
             <strong>Bachelor of Technology</strong> — Information Technology
             <br />
@@ -258,7 +265,9 @@ function Resume() {
         </section>
 
         <section className="ats-section">
-          <h2><span className="ats-section-icon">🏆</span> Certifications & Awards</h2>
+          <h2>
+            <Award size={16} className="ats-section-icon" /> Certifications & Awards
+          </h2>
           <ul className="ats-cert-list">
             <li><strong>AWS Certified Developer – Associate</strong> <span className="ats-cert-year">(2021)</span></li>
             <li><strong>Pat On Back Award</strong> — Received twice <span className="ats-cert-year">(2021)</span></li>
