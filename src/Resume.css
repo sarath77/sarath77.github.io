@@ -170,7 +170,8 @@
   background: var(--ats-primary-bg);
   padding: 10px 14px;
   border-radius: 8px;
-  border-left: 4px solid var(--ats-primary);
+  border: 1.5px solid #93c5fd;
+  border-left: 4.5px solid var(--ats-primary);
   line-height: 1.5;
   font-size: 10pt;
 }
@@ -184,7 +185,7 @@
 
 .ats-skill-card {
   background: #f8fafc;
-  border: 1px solid var(--ats-border);
+  border: 1.5px solid #cbd5e1;
   border-radius: 8px;
   padding: 8px 12px;
   transition: all 0.2s;
@@ -192,6 +193,32 @@
 
 .ats-skill-card:first-child {
   grid-column: 1 / -1;
+}
+
+/* Themed card borders and backgrounds */
+.ats-skill-card-lang {
+  border: 1.5px solid #60a5fa;
+  background: #f0f7ff;
+}
+
+.ats-skill-card-fw {
+  border: 1.5px solid #2dd4bf;
+  background: #f0fdfa;
+}
+
+.ats-skill-card-cloud {
+  border: 1.5px solid #a78bfa;
+  background: #fbf9ff;
+}
+
+.ats-skill-card-data {
+  border: 1.5px solid #f59e0b;
+  background: #fffdf5;
+}
+
+.ats-skill-card-tool {
+  border: 1.5px solid #fb7185;
+  background: #fff5f6;
 }
 
 .ats-skill-card-label {
@@ -222,38 +249,38 @@
   padding: 2.5px 8px;
   border-radius: 12px;
   font-size: 8.5pt;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
 }
 
 .ats-tag-lang {
-  background: var(--ats-primary-bg);
-  color: var(--ats-primary);
-  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1.5px solid #93c5fd;
 }
 
 .ats-tag-fw {
-  background: var(--ats-accent-bg);
-  color: var(--ats-accent);
-  border: 1px solid #99f6e4;
+  background: #f0fdfa;
+  color: #0f766e;
+  border: 1.5px solid #5eead4;
 }
 
 .ats-tag-cloud {
-  background: var(--ats-purple-bg);
-  color: var(--ats-purple);
-  border: 1px solid #ddd6fe;
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1.5px solid #c4b5fd;
 }
 
 .ats-tag-data {
-  background: var(--ats-amber-bg);
-  color: var(--ats-amber);
-  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #b45309;
+  border: 1.5px solid #fcd34d;
 }
 
 .ats-tag-tool {
-  background: var(--ats-rose-bg);
-  color: var(--ats-rose);
-  border: 1px solid #fecdd3;
+  background: #fff1f2;
+  color: #be123c;
+  border: 1.5px solid #fda4af;
 }
 
 /* ---- Job Entries ---- */
@@ -496,6 +523,8 @@
     padding: 6px 10px !important;
     font-size: 9pt !important;
     line-height: 1.4 !important;
+    border: 1.5px solid #60a5fa !important;
+    border-left: 4px solid #1e40af !important;
   }
 
   .ats-skills-grid {
@@ -506,7 +535,15 @@
   .ats-skill-card {
     padding: 4px 7px !important;
     border-radius: 5px !important;
+    border-width: 1.5px !important;
+    border-style: solid !important;
   }
+
+  .ats-skill-card-lang { border-color: #60a5fa !important; }
+  .ats-skill-card-fw { border-color: #2dd4bf !important; }
+  .ats-skill-card-cloud { border-color: #a78bfa !important; }
+  .ats-skill-card-data { border-color: #f59e0b !important; }
+  .ats-skill-card-tool { border-color: #fb7185 !important; }
 
   .ats-skill-card-label {
     font-size: 7.5pt !important;
@@ -523,12 +560,20 @@
     font-size: 7.5pt !important;
     border-radius: 8px !important;
     line-height: 1.25 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
   }
+
+  .ats-tag-lang { border-color: #93c5fd !important; }
+  .ats-tag-fw { border-color: #5eead4 !important; }
+  .ats-tag-cloud { border-color: #c4b5fd !important; }
+  .ats-tag-data { border-color: #fcd34d !important; }
+  .ats-tag-tool { border-color: #fda4af !important; }
 
   .ats-job {
     margin-bottom: 7px !important;
     padding-left: 8px !important;
-    border-left: 2px solid var(--ats-primary-light) !important;
+    border-left: 3px solid #2563eb !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
@@ -598,11 +643,15 @@
   .ats-edu-card {
     padding: 6px 10px !important;
     font-size: 8.5pt !important;
+    border: 1.5px solid #60a5fa !important;
+    border-radius: 6px !important;
   }
 
   .ats-cert-list li {
     padding: 3px 8px !important;
     font-size: 8.5pt !important;
     margin-bottom: 3px !important;
+    border: 1.5px solid #f59e0b !important;
+    border-radius: 5px !important;
   }
 }
