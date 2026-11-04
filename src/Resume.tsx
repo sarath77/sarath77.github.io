@@ -19,6 +19,28 @@ import {
 } from 'lucide-react';
 import './Resume.css';
 
+function getTechTagClass(tag: string): string {
+  const t = tag.toLowerCase();
+  // Languages -> lang (Blue)
+  if (t.includes('java') || t.includes('javascript') || t.includes('typescript') || t.includes('python') || t === 'sql') {
+    return 'ats-tag-lang';
+  }
+  // Frameworks & Libraries -> fw (Teal)
+  if (t.includes('spring') || t.includes('react') || t.includes('angular') || t.includes('hibernate') || t.includes('play') || t.includes('akka')) {
+    return 'ats-tag-fw';
+  }
+  // Cloud & DevOps -> cloud (Purple)
+  if (t.includes('aws') || t.includes('s3') || t.includes('cloudfront') || t.includes('route 53') || t.includes('terraform') || t.includes('docker') || t.includes('kubernetes') || t.includes('jenkins') || t.includes('git') || t.includes('sns') || t.includes('sqs')) {
+    return 'ats-tag-cloud';
+  }
+  // Data & Messaging -> data (Amber)
+  if (t.includes('kafka') || t.includes('oracle') || t.includes('postgres') || t.includes('snowflake') || t.includes('cassandra') || t.includes('elastic') || t.includes('redis') || t.includes('splunk') || t.includes('dynamodb') || t.includes('gbq') || t.includes('firestore')) {
+    return 'ats-tag-data';
+  }
+  // Tools & Architecture -> tool (Rose)
+  return 'ats-tag-tool';
+}
+
 function Resume() {
   const handlePrint = () => {
     const originalTitle = document.title;
@@ -179,7 +201,7 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java 21', 'Spring Boot', 'Microservices', 'React', 'AWS EKS', 'S3', 'CloudFront', 'Route 53', 'Terraform', 'Oracle', 'Splunk', 'Kong API'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>
@@ -194,14 +216,14 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java', 'Spring Boot', 'Microservices', 'Apache Kafka', 'Oracle DB', 'Splunk API', 'RESTful Services'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>
         </div>
 
-        {/* 2. Publicis Sapient (Starts Page 2 cleanly in print) */}
-        <div className="ats-job ats-page-break">
+        {/* 2. Publicis Sapient */}
+        <div className="ats-job">
           <div className="ats-job-header">
             <div className="ats-job-title">
               <strong>Senior Associate, Platform Level 1</strong>
@@ -219,7 +241,7 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java', 'Spring Boot', 'Microservices', 'React', 'Snowflake', 'GBQ', 'Drools', 'REST API', 'Gradle'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>
@@ -242,7 +264,7 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java', 'REST API', 'PostgreSQL', 'Cassandra', 'Spring', 'Microservices', 'Hibernate', 'React'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>
@@ -254,7 +276,7 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java', 'Spring', 'Apache Kafka', 'ReactJs', 'High Charts', 'Jenkins', 'PostgreSQL'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>
@@ -276,7 +298,7 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java 8', 'Play/Akka', 'Microservices', 'RESTful Services', 'Redis', 'Elasticsearch', 'SBT'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>
@@ -300,7 +322,7 @@ function Resume() {
             </ul>
             <div className="ats-tech-tags">
               {['Java 8', 'Spring Boot', 'Microservices', 'Apache Kafka', 'AWS', 'DynamoDB', 'Docker', 'RESTful Services'].map(s => (
-                <span key={s} className="ats-tech-tag">{s}</span>
+                <span key={s} className={`ats-tech-tag ${getTechTagClass(s)}`}>{s}</span>
               ))}
             </div>
           </div>

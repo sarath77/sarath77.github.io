@@ -389,6 +389,36 @@
   letter-spacing: 0.2px;
 }
 
+.ats-tech-tag.ats-tag-lang {
+  background: #eff6ff;
+  color: #1e40af;
+  border-color: #93c5fd;
+}
+
+.ats-tech-tag.ats-tag-fw {
+  background: #f0fdfa;
+  color: #0f766e;
+  border-color: #5eead4;
+}
+
+.ats-tech-tag.ats-tag-cloud {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border-color: #c4b5fd;
+}
+
+.ats-tech-tag.ats-tag-data {
+  background: #fffbeb;
+  color: #b45309;
+  border-color: #fcd34d;
+}
+
+.ats-tech-tag.ats-tag-tool {
+  background: #fff1f2;
+  color: #be123c;
+  border-color: #fda4af;
+}
+
 /* ---- Two-Column Layout ---- */
 .ats-two-col {
   display: grid;
@@ -642,7 +672,16 @@
   .ats-tech-tag {
     font-size: 7pt !important;
     padding: 0px 4px !important;
+    border-radius: 3px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
   }
+
+  .ats-tech-tag.ats-tag-lang { border-color: #93c5fd !important; background: #eff6ff !important; color: #1e40af !important; }
+  .ats-tech-tag.ats-tag-fw { border-color: #5eead4 !important; background: #f0fdfa !important; color: #0f766e !important; }
+  .ats-tech-tag.ats-tag-cloud { border-color: #c4b5fd !important; background: #f5f3ff !important; color: #7c3aed !important; }
+  .ats-tech-tag.ats-tag-data { border-color: #fcd34d !important; background: #fffbeb !important; color: #b45309 !important; }
+  .ats-tech-tag.ats-tag-tool { border-color: #fda4af !important; background: #fff1f2 !important; color: #be123c !important; }
 
   .ats-two-col {
     gap: 10px !important;
