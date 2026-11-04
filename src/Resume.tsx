@@ -192,7 +192,7 @@ function Resume() {
           </div>
 
           <div className="ats-project">
-            <p className="ats-project-title">▸ Asset Management Portal — <span className="ats-client">Client: Nuveen</span></p>
+            <p className="ats-project-title">Asset Management Portal <span className="ats-project-sep">—</span> <span className="ats-client">Client: Nuveen</span></p>
             <ul>
               <li>Migrated legacy asset management portal applications to modern Spring Boot and React architecture.</li>
               <li>Leveraged AI to develop Benchmark Reconciliation project in under 3 months, achieving up to <strong>7x performance optimization</strong> by identifying Oracle stored procedure bottlenecks and query optimizations.</li>
@@ -207,7 +207,7 @@ function Resume() {
           </div>
 
           <div className="ats-project">
-            <p className="ats-project-title">▸ Fraud Analytics Platform — <span className="ats-client">Client: TIAA</span></p>
+            <p className="ats-project-title">Fraud Analytics Platform <span className="ats-project-sep">—</span> <span className="ats-client">Client: TIAA</span></p>
             <ul>
               <li>Developed Kafka consumers to process fraud analytics data, transforming and storing in Oracle DB.</li>
               <li>Developed reconciliation feature to identify missing data in DB using Splunk API.</li>
@@ -232,7 +232,7 @@ function Resume() {
             <div className="ats-date">September 2021 – April 2025</div>
           </div>
           <div className="ats-project">
-            <p className="ats-project-title">▸ Goldman Sachs Marcus Highline — <span className="ats-client">Quantum Core</span></p>
+            <p className="ats-project-title">Goldman Sachs Marcus Highline <span className="ats-project-sep">—</span> <span className="ats-client">Quantum Core</span></p>
             <ul>
               <li>Designed and developed APIs to facilitate efficient data transfer of transactions, incorporating new validations to ensure data integrity.</li>
               <li>Utilized React to develop and maintain user interfaces for the Quantum ETL platform.</li>
@@ -257,7 +257,7 @@ function Resume() {
             <div className="ats-date">July 2019 – September 2021</div>
           </div>
           <div className="ats-project">
-            <p className="ats-project-title">▸ MasterCard Payment Gateway Services</p>
+            <p className="ats-project-title">MasterCard Payment Gateway Services</p>
             <ul>
               <li>Developed end-to-end functionality for saving searches and reconciliation feature for orders.</li>
               <li>Was part of Spring and Bootstrap upgrade and improving password validations.</li>
@@ -269,7 +269,7 @@ function Resume() {
             </div>
           </div>
           <div className="ats-project">
-            <p className="ats-project-title">▸ Culture of Togetherness</p>
+            <p className="ats-project-title">Culture of Togetherness</p>
             <ul>
               <li>Designed and developed end-to-end applications from frontend, backend to deployment.</li>
               <li>Integrated EPAM SSO with Spring Security, Kafka, and Jenkins for CI/CD pipeline.</li>
@@ -292,7 +292,7 @@ function Resume() {
             <div className="ats-date">February 2019 – July 2019</div>
           </div>
           <div className="ats-project">
-            <p className="ats-project-title">▸ Agent E-Commerce</p>
+            <p className="ats-project-title">Agent E-Commerce</p>
             <ul>
               <li>Primary work focused on maintaining ecommerce applications and bug fixes in Agent E-commerce portal.</li>
             </ul>
@@ -314,7 +314,7 @@ function Resume() {
             <div className="ats-date">January 2017 – January 2019</div>
           </div>
           <div className="ats-project">
-            <p className="ats-project-title">▸ Bose Corporation (BOPIS)</p>
+            <p className="ats-project-title">Bose Corporation (BOPIS)</p>
             <ul>
               <li>Part of a new team working on designing and developing services from ground-up using Microservices, Spring Boot and AWS.</li>
               <li>Consumed data from Apache Kafka and performed RESTful service calls to other Microservices.</li>

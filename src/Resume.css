@@ -342,15 +342,25 @@
 }
 
 .ats-project-title {
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 3px 0;
-  color: var(--ats-slate);
-  font-size: 9.5pt;
+  color: #1e3a8a;
+  font-size: 10pt;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ats-project-sep {
+  color: #94a3b8;
+  font-weight: 400;
 }
 
 .ats-client {
-  color: var(--ats-primary-light);
-  font-weight: 500;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 9pt;
 }
 
 .ats-project ul {
@@ -652,7 +662,19 @@
 
   .ats-project-title {
     font-size: 9pt !important;
+    font-weight: 700 !important;
+    color: #1e3a8a !important;
     margin: 0 0 1px 0 !important;
+    display: block !important;
+  }
+
+  .ats-client {
+    color: #2563eb !important;
+    font-weight: 600 !important;
+  }
+
+  .ats-project-sep {
+    color: #94a3b8 !important;
   }
 
   .ats-project ul {
