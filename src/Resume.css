@@ -354,12 +354,14 @@
 }
 
 .ats-project ul {
-  margin: 3px 0 5px 0;
-  padding-left: 16px;
+  list-style-type: disc;
+  margin: 4px 0 6px 0;
+  padding-left: 18px;
 }
 
 .ats-project li {
-  margin-bottom: 2px;
+  list-style-type: disc;
+  margin-bottom: 3px;
   font-size: 9.5pt;
   line-height: 1.45;
   color: var(--ats-text);
@@ -654,14 +656,16 @@
   }
 
   .ats-project ul {
-    margin: 1px 0 3px 0 !important;
-    padding-left: 14px !important;
+    list-style-type: disc !important;
+    margin: 2px 0 3px 0 !important;
+    padding-left: 16px !important;
   }
 
   .ats-project li {
+    list-style-type: disc !important;
     font-size: 8.5pt !important;
     line-height: 1.35 !important;
-    margin-bottom: 1px !important;
+    margin-bottom: 2px !important;
   }
 
   .ats-tech-tags {
